@@ -44,7 +44,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="453ee" class="javax.swing.JButton" binding="prüfeTippzahlenButton" default-binding="true">
+      <component id="453ee" class="javax.swing.JButton" binding="checkmynumbers">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -92,7 +92,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="b8e1" class="javax.swing.JButton" binding="bestimmeDenGewinnrangButton" default-binding="true">
+      <component id="b8e1" class="javax.swing.JButton" binding="Auswertung">
         <constraints>
           <grid row="5" column="0" row-span="1" col-span="6" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -108,7 +108,7 @@
           <text value="Label"/>
         </properties>
       </component>
-      <component id="d925a" class="javax.swing.JButton" binding="zieheLottozahlenButton" default-binding="true">
+      <component id="d925a" class="javax.swing.JButton" binding="ziehen">
         <constraints>
           <grid row="3" column="0" row-span="1" col-span="6" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>

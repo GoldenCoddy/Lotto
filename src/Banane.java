@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.event.*;
-import java.util.concurrent.ThreadLocalRandom;
 
 
 public class Banane extends JDialog {
@@ -12,11 +11,11 @@ public class Banane extends JDialog {
     private JSpinner spinner4;
     private JSpinner spinner5;
     private JSpinner spinner6;
-    private JButton prüfeTippzahlenButton;
+    private JButton checkmynumbers;
     private JButton quicktippButton;
     private JTextPane textPane1;
-    private JButton bestimmeDenGewinnrangButton;
-    private JButton zieheLottozahlenButton;
+    private JButton Auswertung;
+    private JButton ziehen;
     private JButton buttonCancel;
 
     public Banane() {
@@ -36,7 +35,7 @@ public class Banane extends JDialog {
             }
         });*/
 
-        // call onCancel() when cross is clicked
+        /* call onCancel() when cross is clicked
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
@@ -50,6 +49,7 @@ public class Banane extends JDialog {
                 onCancel();
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+        */
     }
 
     private void onOK() {
@@ -57,10 +57,10 @@ public class Banane extends JDialog {
     }
 
 
-    private void onCancel() {
+   /* private void onCancel() {
         // add your code here if necessary
         dispose();
-    }
+    }*/
 
     public static void main(String[] args) {
         Banane dialog = new Banane();
