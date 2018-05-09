@@ -11,7 +11,7 @@ public class otto {
     }
 
     public int[] wuerfel() {
-        for (int i = 0; i < tcount + 1; i++) {
+        for (int i = 0; i < tcount ; i++) {
             wuerfelergebnisse[i] = ThreadLocalRandom.current().nextInt(1, tmax);
         }//Math.random();
             // wuerfelergebnisse[i] = Math.round(Math.random());

@@ -14,9 +14,18 @@ public class Banane extends JDialog {
     private JButton checkmynumbers;
     private JButton quicktippButton;
     private JTextPane textPane1;
+    private boolean hasahackinghaxorhackedme = false;
     private JButton Auswertung;
     private JButton ziehen;
+    private JLabel Label1;
     private JButton buttonCancel;
+    private sortmaschine_exe sortmatschine = new sortmaschine_exe();
+    private otto maoam = new otto(6,49);
+    private WerteDatAuself OutWorther = new WerteDatAuself(hasahackinghaxorhackedme);
+    private int[]  getippt = new int[6];
+    private int[]  gezogen = new int[6];
+    private int richtige;
+
 
     public Banane() {
         setContentPane(contentPane);
@@ -50,11 +59,84 @@ public class Banane extends JDialog {
             }
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
         */
+        checkmynumbers.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                onCheck();
+            }
+        });
+        ziehen.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                onZiehung();
+            }
+        });
+        Auswertung.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                onVergLeiche();
+            }
+        });
+        quicktippButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                onQuickTipp();
+            }
+        });
     }
 
     private void onOK() {
 
     }
+
+    private void onQuickTipp() {
+        onCheck();
+        onZiehung();
+        onVergLeiche();
+    }
+
+    private void onVergLeiche() {
+        richtige = OutWorther.richtige(getippt, gezogen);
+        System.out.println(richtige);
+        if (richtige == 1) {
+            Label1.setText("Sie haben 1 richtigen.");
+        } else {
+            Label1.setText("Sie haben " + String.valueOf(richtige) + " richtige.");
+        }
+    }
+
+    private void onCheck() {
+        //spinner1.getValue();
+        //getippt[1] = spinner1.getValue();
+        getippt[0] = (int) spinner1.getValue();
+        getippt[1] = (int) spinner2.getValue();
+        getippt[2] = (int) spinner3.getValue();
+        getippt[3] = (int) spinner4.getValue();
+        getippt[4] = (int) spinner5.getValue();
+        getippt[5] = (int) spinner6.getValue();
+        //sortmatschine = new sortmaschine_exe();
+        getippt = sortmatschine.sortmyfoo(getippt);
+        spinner1.setValue(getippt[0]);
+        spinner2.setValue(getippt[1]);
+        spinner3.setValue(getippt[2]);
+        spinner4.setValue(getippt[3]);
+        spinner5.setValue(getippt[4]);
+        spinner6.setValue(getippt[5]);
+    }
+
+    private void onZiehung() {
+        gezogen = maoam.wuerfel();
+        gezogen = sortmatschine.sortmyfoo(gezogen);
+        String tempa = "";
+        for (var I = 0; I < 6; I++) {
+            tempa = tempa + String.valueOf(gezogen[I]);
+            if (I<5) {
+                tempa = tempa + "; ";
+            }
+        }
+        textPane1.setText(tempa);
+    }
+
 
 
    /* private void onCancel() {
