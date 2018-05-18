@@ -19,8 +19,7 @@ public class otto {
     public int[] wuerfel() {
         for (int i = 0; i < tcount ; i++) {
             wuerfelergebnisse[i] = ThreadLocalRandom.current().nextInt(tmin, tmax);
-        }//Math.random();
-            // wuerfelergebnisse[i] = Math.round(Math.random());
+        }
         System.out.println(sucessfull);
         sucessfull = osucessfull;
         while (!sucessfull) {
@@ -28,7 +27,6 @@ public class otto {
             sucessfull = true;
             for (int i = 0; i < wuerfelergebnisse.length - 1; i++) {
                 if (wuerfelergebnisse[i] == wuerfelergebnisse[i + 1]) {
-                    //dublicate = true;
                     sucessfull = false;
                     wuerfelergebnisse[i] = ThreadLocalRandom.current().nextInt(tmin, tmax);
                 }

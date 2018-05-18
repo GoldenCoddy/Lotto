@@ -14,14 +14,13 @@ public class Banane extends JDialog {
     private JButton checkmynumbers;
     private JButton quicktippButton;
     private JTextPane textPane1;
-    private boolean hasahackinghaxorhackedme = false;
     private JButton Auswertung;
     private JButton ziehen;
     private JLabel Label1;
     private JButton buttonCancel;
     private sortmaschine_exe sortmatschine = new sortmaschine_exe();
     private otto maoam = new otto(6,49, 1, false);
-    private WerteDatAuself OutWorther = new WerteDatAuself(hasahackinghaxorhackedme);
+    private WerteDatAuself OutWorther = new WerteDatAuself(false);
     private int[]  getippt = new int[6];
     private int[]  gezogen = new int[6];
     private int richtige;
@@ -38,27 +37,6 @@ public class Banane extends JDialog {
             }
         });
 
-        /*buttonCancel.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                onCancel();
-            }
-        });*/
-
-        /* call onCancel() when cross is clicked
-        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
-                onCancel();
-            }
-        });
-
-        // call onCancel() on ESCAPE
-        contentPane.registerKeyboardAction(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                onCancel();
-            }
-        }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-        */
         checkmynumbers.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -83,10 +61,21 @@ public class Banane extends JDialog {
                 onQuickTipp();
             }
         });
+        Label1.addComponentListener(new ComponentAdapter() {
+        });
     }
 
     private void onOK() {
-
+        /* 38 40 37 39 66 65 */
+        if ((int) spinner1.getValue() == 38 && (int) spinner2.getValue() == 40 && (int) spinner3.getValue() == 37 && (int) spinner4.getValue() == 39 && (int) spinner5.getValue() == 66 && (int) spinner6.getValue() == 65) {
+           System.out.println("=============================================");
+           System.out.println("|| You hacky Hax0r activated the hack mode ||");
+           System.out.println("|| Cyber, Cyber, Cyber, Cyber, Cyber, CYBER||");
+           System.out.println("=============================================");
+           OutWorther = new WerteDatAuself(true);
+        } else {
+            dispose();
+        }
     }
 
     private void onQuickTipp() {
@@ -117,31 +106,24 @@ public class Banane extends JDialog {
     }
 
     private void onCheck() {
-        //spinner1.getValue();
-        //getippt[1] = spinner1.getValue();
         getippt[0] = (int) spinner1.getValue();
         getippt[1] = (int) spinner2.getValue();
         getippt[2] = (int) spinner3.getValue();
         getippt[3] = (int) spinner4.getValue();
         getippt[4] = (int) spinner5.getValue();
         getippt[5] = (int) spinner6.getValue();
-        //sortmatschine = new sortmaschine_exe();
         getippt = sortmatschine.sortmyfoo(getippt);
-        //hier
-        //boolean dublicate = false;
         boolean sucessful = false;
         while (!sucessful) {
             getippt = sortmatschine.sortmyfoo(getippt);
             sucessful = true;
             for (int i = 0; i < getippt.length - 1; i++) {
                 if (getippt[i] == getippt[i + 1]) {
-                    //dublicate = true;
                     sucessful = false;
                     getippt[i + 1]++;
                 }
             }
         }
-        //hier
         printtospinners();
     }
 
@@ -158,12 +140,6 @@ public class Banane extends JDialog {
         textPane1.setText(tempa);
     }
 
-
-
-   /* private void onCancel() {
-        // add your code here if necessary
-        dispose();
-    }*/
 
     public static void main(String[] args) {
         Banane dialog = new Banane();
