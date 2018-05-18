@@ -5,12 +5,14 @@ public class otto {
     int tmin;
     int tcount;
     sortmaschine_exe sortmatschine = new sortmaschine_exe();
+    boolean sucessfull;
 
-    public otto(int count, int max, int min) {
+    public otto(int count, int max, int min, boolean duplicates) {
         wuerfelergebnisse = new int[count];
         tmax = max;
         tmin = min;
         tcount = count;
+        sucessfull = duplicates;
     }
 
     public int[] wuerfel() {
@@ -18,7 +20,6 @@ public class otto {
             wuerfelergebnisse[i] = ThreadLocalRandom.current().nextInt(tmin, tmax);
         }//Math.random();
             // wuerfelergebnisse[i] = Math.round(Math.random());
-        boolean sucessfull = false;
         while (!sucessfull) {
             wuerfelergebnisse = sortmatschine.sortmyfoo(wuerfelergebnisse);
             sucessfull = true;
