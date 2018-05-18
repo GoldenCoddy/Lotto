@@ -93,6 +93,8 @@ public class Banane extends JDialog {
         onCheck();
         onZiehung();
         onVergLeiche();
+        getippt = maoam.wuerfel();
+        printtospinners();
     }
 
     private void onVergLeiche() {
@@ -103,6 +105,15 @@ public class Banane extends JDialog {
         } else {
             Label1.setText("Sie haben " + String.valueOf(richtige) + " richtige.");
         }
+    }
+
+    private void printtospinners() {
+        spinner1.setValue(getippt[0]);
+        spinner2.setValue(getippt[1]);
+        spinner3.setValue(getippt[2]);
+        spinner4.setValue(getippt[3]);
+        spinner5.setValue(getippt[4]);
+        spinner6.setValue(getippt[5]);
     }
 
     private void onCheck() {
@@ -131,12 +142,7 @@ public class Banane extends JDialog {
             }
         }
         //hier
-        spinner1.setValue(getippt[0]);
-        spinner2.setValue(getippt[1]);
-        spinner3.setValue(getippt[2]);
-        spinner4.setValue(getippt[3]);
-        spinner5.setValue(getippt[4]);
-        spinner6.setValue(getippt[5]);
+        printtospinners();
     }
 
     private void onZiehung() {
