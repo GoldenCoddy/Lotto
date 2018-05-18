@@ -128,7 +128,7 @@ public class Banane extends JDialog {
         gezogen = maoam.wuerfel();
         gezogen = sortmatschine.sortmyfoo(gezogen);
         String tempa = "";
-        for (var I = 0; I < 6; I++) {
+        for (int I = 0; I < 6; I++) {
             tempa = tempa + String.valueOf(gezogen[I]);
             if (I<5) {
                 tempa = tempa + "; ";
