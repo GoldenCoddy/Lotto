@@ -20,7 +20,7 @@ public class Banane extends JDialog {
     private JLabel Label1;
     private JButton buttonCancel;
     private sortmaschine_exe sortmatschine = new sortmaschine_exe();
-    private otto maoam = new otto(6,49);
+    private otto maoam = new otto(6,49, 1);
     private WerteDatAuself OutWorther = new WerteDatAuself(hasahackinghaxorhackedme);
     private int[]  getippt = new int[6];
     private int[]  gezogen = new int[6];
