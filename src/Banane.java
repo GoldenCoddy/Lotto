@@ -116,6 +116,21 @@ public class Banane extends JDialog {
         getippt[5] = (int) spinner6.getValue();
         //sortmatschine = new sortmaschine_exe();
         getippt = sortmatschine.sortmyfoo(getippt);
+        //hier
+        //boolean dublicate = false;
+        boolean sucessful = false;
+        while (!sucessful) {
+            getippt = sortmatschine.sortmyfoo(getippt);
+            sucessful = true;
+            for (int i = 0; i < getippt.length - 1; i++) {
+                if (getippt[i] == getippt[i + 1]) {
+                    //dublicate = true;
+                    sucessful = false;
+                    getippt[i + 1]++;
+                }
+            }
+        }
+        //hier
         spinner1.setValue(getippt[0]);
         spinner2.setValue(getippt[1]);
         spinner3.setValue(getippt[2]);
