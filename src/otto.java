@@ -20,7 +20,6 @@ public class otto {
         for (int i = 0; i < tcount ; i++) {
             wuerfelergebnisse[i] = ThreadLocalRandom.current().nextInt(tmin, tmax);
         }
-        System.out.println(sucessfull);
         sucessfull = osucessfull;
         while (!sucessfull) {
             wuerfelergebnisse = sortmatschine.sortmyfoo(wuerfelergebnisse);

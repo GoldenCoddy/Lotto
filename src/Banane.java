@@ -88,7 +88,6 @@ public class Banane extends JDialog {
 
     private void onVergLeiche() {
         richtige = OutWorther.richtige(getippt, gezogen);
-        System.out.println(richtige);
         if (richtige == 1) {
             Label1.setText("Sie haben 1 richtigen.");
         } else {
@@ -144,6 +143,9 @@ public class Banane extends JDialog {
     public static void main(String[] args) {
         Banane dialog = new Banane();
         dialog.pack();
+        System.out.println("Starting Lotto by CryptKiddie and GoldenCoddy");
+        System.out.println("This program is pretty shitty and OpenSource.");
+        System.out.println("Fork or contribute under https://github.com/GoldenCoddy/Lotto/");
         dialog.setVisible(true);
         System.exit(0);
     }
