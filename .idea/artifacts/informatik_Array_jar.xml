@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="informatik Array:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/informatik_Array_jar</output-path>
-    <root id="archive" name="informatik Array.jar">
-      <element id="module-output" name="informatik Array" />
-    </root>
-  </artifact>
-</component>
