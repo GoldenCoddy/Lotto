@@ -40,6 +40,7 @@ public class Banane extends JDialog {
         checkmynumbers.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                getfromspinners();
                 onCheck();
             }
         });
@@ -79,10 +80,31 @@ public class Banane extends JDialog {
     }
 
     private void onQuickTipp() {
-        onCheck();
-        onZiehung();
-        onVergLeiche();
         getippt = maoam.wuerfel();
+        System.out.println("Getippt nach dem Würfeln:");
+        for (int i = 0; i<6; i++) {
+            System.out.println(getippt[i]);
+        }
+        printtospinners();
+        System.out.println("Getippt nach dem drucken:");
+        for (int i = 0; i<6; i++) {
+            System.out.println(getippt[i]);
+        }
+        onZiehung();
+        System.out.println("Getippt nach der Ziehung:");
+        for (int i = 0; i<6; i++) {
+            System.out.println(getippt[i]);
+        }
+        onCheck();
+        System.out.println("Getippt nach dem Check:");
+        for (int i = 0; i<6; i++) {
+            System.out.println(getippt[i]);
+        }
+        onVergLeiche();
+        System.out.println("Getippt nach dem Vergleich:");
+        for (int i = 0; i<6; i++) {
+            System.out.println(getippt[i]);
+        }
         printtospinners();
     }
 
@@ -103,14 +125,17 @@ public class Banane extends JDialog {
         spinner5.setValue(getippt[4]);
         spinner6.setValue(getippt[5]);
     }
-
-    private void onCheck() {
+    private void getfromspinners() {
         getippt[0] = (int) spinner1.getValue();
         getippt[1] = (int) spinner2.getValue();
         getippt[2] = (int) spinner3.getValue();
         getippt[3] = (int) spinner4.getValue();
         getippt[4] = (int) spinner5.getValue();
         getippt[5] = (int) spinner6.getValue();
+        System.out.println("Fehler 1");
+    }
+
+    private void onCheck() {
         getippt = sortmatschine.sortmyfoo(getippt);
         boolean sucessful = false;
         while (!sucessful) {
@@ -127,6 +152,7 @@ public class Banane extends JDialog {
     }
 
     private void onZiehung() {
+        maoam = new otto(6,49,1,false);
         gezogen = maoam.wuerfel();
         gezogen = sortmatschine.sortmyfoo(gezogen);
         String tempa = "";
