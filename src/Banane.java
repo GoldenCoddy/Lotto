@@ -81,24 +81,11 @@ public class Banane extends JDialog {
 
     private void onQuickTipp() {
         getippt = maoam.wuerfel();
-        System.out.println("Getippt nach dem Würfeln:");
-        for (int i = 0; i<6; i++) {
-            System.out.println(getippt[i]);
-        }
         printtospinners();
-        System.out.println("Getippt nach dem drucken:");
-        for (int i = 0; i<6; i++) {
-            System.out.println(getippt[i]);
-        }
         onZiehung();
         System.out.println("Getippt nach der Ziehung:");
-        for (int i = 0; i<6; i++) {
-            System.out.println(getippt[i]);
-        }
         onCheck();
         System.out.println("Getippt nach dem Check:");
-        for (int i = 0; i<6; i++) {
-            System.out.println(getippt[i]);
         }
         onVergLeiche();
         System.out.println("Getippt nach dem Vergleich:");
@@ -132,7 +119,6 @@ public class Banane extends JDialog {
         getippt[3] = (int) spinner4.getValue();
         getippt[4] = (int) spinner5.getValue();
         getippt[5] = (int) spinner6.getValue();
-        System.out.println("Fehler 1");
     }
 
     private void onCheck() {
